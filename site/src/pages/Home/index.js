@@ -1,127 +1,74 @@
-import { Link } from "react-router-dom";
-import { imagens } from "./imagens";
+import { Link } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
+import './Home.css';
+import 'bootstrap';
 
 function Home() {
   return (
-    <div>
-    {/* carousel */}
     <div className="container-fluid">
-        <div className="carousel slide" data-ride="carousel" id="carousel-feira">
-            <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="1.png" className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src= { imagens } className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src="3.png" className="d-block w-100" alt="" />
-            </div>
-        </div>
-        <Link href="#carousel-feira" role="button" className="carousel-control-prev" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-        </Link>
-        <Link href="#carousel-feira" role="button" className="carousel-control-next" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-        </Link>
-        </div>
-    </div>
-    {/* fim-carousel */}
-    <hr />
-    <main className="row produto-page">
+      <div className="carousel slide" id="carousel-feira">
+        <Carousel>
+          <Carousel.Item>
+            <img src="imagens/baner_I.png" className="d-block w-100" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src="imagens/baner_II.png" className="d-block w-100" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src="imagens/baner_III.png" className="d-block w-100" alt="" />
+          </Carousel.Item>
+        </Carousel>
+        
+      </div>
+
+      <hr />
+
+      <div className="container-fluid">
+        <section className="promocao-header col-12 mb-0">
+          <span className="promocao-header-title">PROMOÇÕES</span>
+          <span>Produtos</span>
+        </section>
+      </div>
+
+      <hr />
+
+      <main className="row produto-page">
         <div className="col-12">
-            <div className="row">
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal">
-                        <a href="paginapd.html"><img src="abacaxi.jpg" alt="Abacaxi" className="img-fluid" /></a>
-                        <span>Abacaxi</span>
-                        <span>R$ <span className="price">10,00</span> <span className="unit">Unidade</span></span>
-                    </div>
+          <div className="row">
+            {products.map((product, index) => (
+              <div key={index} className="produto-container-prisncipal">
+                <div className="produto-prisncipal">
+                  <Link to={`/paginapd/${product.id}`} >
+                    <img src={product.image} alt={product.name} className="img-fluid" />
+                  </Link>
+                  <span>{product.name}</span>
+                  <span>
+                    R$ <span className="price">{product.price}</span> <span className="unit">{product.unit}</span>
+                  </span>
                 </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal">
-                        <img src="morango.png" alt="Morango" className="img-fluid" />
-                        <span>Morango</span>
-                        <span>R$ <span className="price">12,00</span> <span className="unit">250g</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal">
-                        <img src="alface.png" alt="Alface" className="img-fluid"/>
-                        <span>Alface</span>
-                        <span>R$ <span className="price">3,99</span> <span className="unit">Unidade</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal ">
-                        <img src="greem_aple.png" alt="Maça Verde" className="img-fluid"/>
-                        <span>Maça Verde</span>
-                        <span>R$ <span className="price">15,89</span> <span className="unit"> kg</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="beterrabas.jpg" alt="Beterraba" className="img-fluid"/>
-                        <span>Beterraba</span>
-                        <span>R$ <span className="price">4,99</span> <span className="unit"> Kg</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="laranja.jpg" alt="Laranja" className="img-fluid"/>
-                        <span>Laranja</span>
-                        <span>R$ <span className="price">7,99</span> <span className="unit"> kg</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="verduras.png" alt="Legumes" className="img-fluid"/>
-                        <span>Legumes</span>
-                        <span>R$ <span className="price">7,99</span> <span className="unit"> Kg</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="verduras_verde.png" alt="Verdura" className="img-fluid"/>
-                        <span>Verdura</span>
-                        <span>R$ <span className="price">12,00</span> <span className="unit">250g</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="verdura.png" alt="Cenoura" className="img-fluid"/>
-                        <span>Cenoura</span>
-                        <span>R$ <span className="price">3,75</span> <span className="unit">Kg</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="melão.jpg" alt="Melão" className="img-fluid"/>
-                        <span>Melão</span>
-                        <span>R$ <span className="price">6,99</span> <span className="unit">Unidade</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="uva.jpg" alt="Uva Thompson" className="img-fluid"/>
-                        <span>Uva Thompson</span>
-                        <span>R$ <span className="price">14,97</span> <span className="unit">500g</span></span>
-                    </div>
-                </div>
-                <div className="produto-container-prisncipal">
-                    <div className="produto-prisncipal" >
-                        <img src="banana.jpg" alt="Banana Prata" className="img-fluid"/>
-                        <span>Banana Prata</span>
-                        <span>R$ <span className="price">6,98</span> <span className="unit">Kg</span></span>
-                    </div>
-                </div>
-            </div>
+              </div>
+            ))}
+          </div>
         </div>
-    </main>
+      </main>
     </div>
   );
 }
+
+const products = [
+  { id: 1, image: 'imagens/abacaxi.jpg', name: 'Abacaxi', price: 10.00, unit: 'Unidade' },
+  { id: 2, image: 'imagens/morango.png', name: 'Morango', price: 12.00, unit: '250g' },
+  { id: 3, image: 'imagens/alface.png', name: 'Alface', price: 3.99, unit: 'Unidade' },
+  { id: 4, image: 'imagens/greem_aple.png', name: 'Maça Verde', price: 15.89, unit: 'kg' },
+  { id: 5, image: 'imagens/beterrabas.jpg', name: 'Beterraba', price: 4.99, unit: 'Kg' },
+  { id: 6, image: 'imagens/laranja.jpg', name: 'Laranja', price: 7.99, unit: 'kg' },
+  { id: 7, image: 'imagens/verduras.png', name: 'Legumes', price: 7.99, unit: 'Kg' },
+  { id: 8, image: 'imagens/verduras_verde.png', name: 'Verdura', price: 12.00, unit: '250g' },
+  { id: 9, image: 'imagens/verdura.png', name: 'Cenoura', price: 3.75, unit: 'Kg' },
+  { id: 10, image: 'imagens/melão.jpg', name: 'Melão', price: 6.99, unit: 'Unidade' },
+  { id: 11, image: 'imagens/uva.jpg', name: 'Uva Thompson', price: 14.97, unit: '500g' },
+  { id: 12, image: 'imagens/banana.jpg', name: 'Banana Prata', price: 6.98, unit: 'Kg' },
+];
+  
 
 export default Home;

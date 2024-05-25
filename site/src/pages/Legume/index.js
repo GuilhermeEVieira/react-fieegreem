@@ -1,81 +1,108 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 
-function Home() {
+function Legume() {
   return (
     <div>
-
-      {/* carousel */}
-      <div className="container-fluid">
-        <div className="carousel slide" data-ride="carousel" id="carousel-feira">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="assets/imagens/1.png" className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src="assets/imagens/2.png" className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src="assets/imagens/3.png" className="d-block w-100" alt="" />
-            </div>
-          </div>
-          <Link href="#carousel-feira" role="button" className="carousel-control-prev" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </Link>
-          <Link href="#carousel-feira" role="button" className="carousel-control-next" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </Link>
-        </div>
-      </div>
-      {/* fim-carousel */}
       <hr />
-      <div className="container-fluid">
-        <section className="row" id="section-cardapio">
-          <div className="card" id="card-frutas">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Frutas</h5>
-              <p className="card-text">Descrição sobre as frutas</p>
-              <Link href="frutas.html" className="btn btn-primary">Veja Mais</Link>
+      <div className="line"></div>
+
+      <section className="categorias-quantidades">
+        <span className="categorias-titulo">Legumes</span>
+      </section>
+
+      <hr />
+      <div className="line"></div>
+
+      <main className="row produto-page">
+        <div className="row">
+          {[
+            {
+              imagem: 'abobora.jpg',
+              nome: 'Abobora',
+              preco: 9.99,
+              unidade: 'Unidade',
+            },
+            {
+              imagem: 'berinjela.jpg',
+              nome: 'Berinjela',
+              preco: 4.69,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'rabanete.jpg',
+              nome: 'Rabanete',
+              preco: 3.50,
+              unidade: '250g',
+            },
+            {
+              imagem: 'ervilha.jpg',
+              nome: 'Ervilha',
+              preco: 4.99,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'pimentão.jpg',
+              nome: 'Pimentão',
+              preco: 15.89,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'tomate.jpg',
+              nome: 'Tomate',
+              preco: 6.99,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'hortela.jpg',
+              nome: 'Hortelã',
+              preco: 3.49,
+              unidade: '100g',
+            },
+            {
+              imagem: 'espinafre.jpg',
+              nome: 'Espinafre',
+              preco: 9.95,
+              unidade: '250g',
+            },
+            {
+              imagem: 'couve flor.jpg',
+              nome: 'Couve Flor',
+              preco: 14.90,
+              unidade: '250g',
+            },
+            {
+              imagem: 'repolho.jpg',
+              nome: 'Repolho',
+              preco: 5.49,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'brocolis.jpg',
+              nome: 'Brócolis',
+              preco: 11.70,
+              unidade: 'Kg',
+            },
+            {
+              imagem: 'pepino.jpg',
+              nome: 'Pepino',
+              preco: 15.90,
+              unidade: 'Kg',
+            },
+          ].map((produto, index) => (
+            <div key={index} className="produto-container-prisncipal">
+              <div className="produto-prisncipal">
+                <img src={`/imagens/${produto.imagem}`} alt="" />
+                <span>{produto.nome}</span>
+                <span>
+                  R$ <span className="price">{produto.preco}</span> <span className="unit">{produto.unidade}</span>
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="card" id="card-verduras">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Verduras</h5>
-              <p className="card-text">Descrição sobre as verduras</p>
-                <Link href="verduras.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-hortalicas">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Hortaliças</h5>
-              <p className="card-text">Descrição sobre as hortaliças</p>
-              <Link href="hortaliças.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-legums">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Legumes</h5>
-              <p className="card-text">Descrição sobre os legumes</p>
-              <Link href="legumes.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-outros">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Outros</h5>
-              <p className="card-text">Descrição sobre outros</p>
-              <Link href="outros.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-        </section>
-      </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }
 
-export default Home;
+export default Legume;

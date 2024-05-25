@@ -1,81 +1,121 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import 'bootstrap';
 
-function Home() {
+function Verdura() {
   return (
     <div>
-
-      {/* carousel */}
-      <div className="container-fluid">
-        <div className="carousel slide" data-ride="carousel" id="carousel-feira">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="assets/imagens/1.png" className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src="assets/imagens/2.png" className="d-block w-100" alt="" />
-            </div>
-            <div className="carousel-item ">
-              <img src="assets/imagens/3.png" className="d-block w-100" alt="" />
-            </div>
-          </div>
-          <Link href="#carousel-feira" role="button" className="carousel-control-prev" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </Link>
-          <Link href="#carousel-feira" role="button" className="carousel-control-next" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </Link>
-        </div>
-      </div>
-      {/* fim-carousel */}
       <hr />
-      <div className="container-fluid">
-        <section className="row" id="section-cardapio">
-          <div className="card" id="card-frutas">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Frutas</h5>
-              <p className="card-text">Descrição sobre as frutas</p>
-              <Link href="frutas.html" className="btn btn-primary">Veja Mais</Link>
-            </div>
+      <section className="categorias-quantidades">
+        <span className="categorias-titulo">verduras</span>
+      </section>
+      <hr />
+      <main className="row produto-page">
+        <div className="col-12">
+          <div className="row">
+            {products.map((product, index) => (
+              <div key={index} className="produto-container-prisncipal">
+              <div className="produto-prisncipal">
+                <img src={`/imagens/${product.imagem}`} alt="" />
+                <span>{product.nome}</span>
+                <span>
+                  R$ <span className="price">{product.preco}</span> <span className="unit">{product.unidade}</span>
+                </span>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="card" id="card-verduras">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Verduras</h5>
-              <p className="card-text">Descrição sobre as verduras</p>
-                <Link href="verduras.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-hortalicas">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Hortaliças</h5>
-              <p className="card-text">Descrição sobre as hortaliças</p>
-              <Link href="hortaliças.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-legums">
-            <img src="/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Legumes</h5>
-              <p className="card-text">Descrição sobre os legumes</p>
-              <Link href="legumes.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-          <div className="card" id="card-outros">
-            <img src="assets/imagens/LogoFeira.png" className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Outros</h5>
-              <p className="card-text">Descrição sobre outros</p>
-              <Link href="outros.js" className="btn btn-primary">Veja Mais</Link>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }
 
-export default Home;
+
+  const products = [
+    {
+      id: 1,
+      imagem: 'imagens/alface.png',
+      nome: 'Alface',
+      preco: 2.59,
+      unidade: 'Unidade',
+    },
+    {
+      id: 2,
+      imagem: 'imagens/abobora.jpg',
+      nome: 'Abobora',
+      preco: 9.99,
+      unidade: 'Kg',
+    },
+    {
+      id: 3,
+      imagem: 'imagens/Champiñones.jpg',
+      nome: 'Champignon',
+      preco: 5.75,
+      unidade: '300g',
+    },
+    {
+      id: 4,
+      imagem: 'imagens/cebola roxa.jpg',
+      nome: 'Cebola Roxa',
+      preco: 6.99,
+      unidade: 'Kg',
+    },
+    {
+      id: 5,
+      imagem: 'imagens/pimentão.jpg',
+      nome: 'Pimentão',
+      preco: 15.89,
+      unidade: 'Kg',
+    },
+    {
+      id: 6,
+      imagem: 'imagens/tomate.jpg',
+      nome: 'Tomate',
+      preco: 6.99,
+      unidade: 'Kg',
+    },
+    {
+      id: 7,
+      imagem: 'imagens/hortela.jpg',
+      nome: 'Hortelã',
+      preco: 3.49,
+      unidade: '100g',
+    },
+    {
+      id: 8,
+      imagem: 'imagens/espinafre.jpg',
+      nome: 'Espinafre',
+      preco: 9.95,
+      unidade: '250g',
+    },
+    {
+      id: 9,
+      imagem: 'imagens/couve flor.jpg',
+      nome: 'Couve Flor',
+      preco: 14.90,
+      unidade: '250g',
+    },
+    {
+      id: 10,
+      imagem: 'imagens/repolho.jpg',
+      nome: 'Repolho',
+      preco: 5.49,
+      unidade: 'Kg',
+    },
+    {
+      id: 11,
+      imagem: 'imagens/brocolis.jpg',
+      nome: 'Brócolis',
+      preco: 11.70,
+      unidade: 'Kg',
+    },
+    {
+      id: 12,
+      imagem: 'imagens/pepino.jpg',
+      nome: 'Pepino',
+      preco: 15.90,
+      unidade: 'Kg',
+    },
+  ];
+
+export default Verdura;
