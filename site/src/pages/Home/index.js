@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { imagens } from "./imagens/1.png";
+import { imagens } from "./imagens";
 
 function Home() {
   return (
     <div>
-      {/* carousel */}
-      <div className="container-fluid">
+    {/* carousel */}
+    <div className="container-fluid">
         <div className="carousel slide" data-ride="carousel" id="carousel-feira">
-          <div className="carousel-inner">
+            <div className="carousel-inner">
             <div className="carousel-item active">
               <img src="1.png" className="d-block w-100" alt="" />
             </div>
@@ -17,20 +17,20 @@ function Home() {
             <div className="carousel-item ">
               <img src="3.png" className="d-block w-100" alt="" />
             </div>
-          </div>
-          <Link href="#carousel-feira" role="button" className="carousel-control-prev" data-slide="prev">
+        </div>
+        <Link href="#carousel-feira" role="button" className="carousel-control-prev" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
-          </Link>
-          <Link href="#carousel-feira" role="button" className="carousel-control-next" data-slide="next">
+        </Link>
+        <Link href="#carousel-feira" role="button" className="carousel-control-next" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
-          </Link>
+        </Link>
         </div>
-      </div>
-      {/* fim-carousel */}
-      <hr />
-      <main className="row produto-page">
+    </div>
+    {/* fim-carousel */}
+    <hr />
+    <main className="row produto-page">
         <div className="col-12">
             <div className="row">
                 <div className="produto-container-prisncipal">
@@ -120,7 +120,7 @@ function Home() {
             </div>
         </div>
     </main>
-  </div>
+    </div>
   );
 }
 
