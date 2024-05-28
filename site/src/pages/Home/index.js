@@ -6,22 +6,19 @@ import 'bootstrap';
 function Home() {
   return (
     <div className="container-fluid">
-      <div className="carousel slide" id="carousel-feira">
-        <Carousel>
-          <Carousel.Item>
-            <img src="imagens/baner_I.png" className="d-block w-100" alt="" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="imagens/baner_II.png" className="d-block w-100" alt="" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="imagens/baner_III.png" className="d-block w-100" alt="" />
-          </Carousel.Item>
-        </Carousel>
-        
-      </div>
+      <Carousel id="carousel" className="d-flex" indicators={false} interval={3000} >
+        <Carousel.Item className="d-inline-block">
+          <img src="imagens/baner_I.png" className="d-block " alt="I" width={'100%'}/>
+        </Carousel.Item>
+        <Carousel.Item className="d-inline-block">
+          <img src="imagens/baner_II.png" className="d-block " alt="II" width={'100%'}/>
+        </Carousel.Item>
+        <Carousel.Item className="d-inline-block">
+          <img src="imagens/baner_III.png" className="d-block " alt="III" width={'100%'}/>
+        </Carousel.Item>
+      </Carousel>
 
-      <hr />
+      <hr/>
 
       <div className="container-fluid">
         <section className="promocao-header col-12 mb-0">
@@ -30,7 +27,7 @@ function Home() {
         </section>
       </div>
 
-      <hr />
+      <hr/>
 
       <main className="row produto-page">
         <div className="col-12">

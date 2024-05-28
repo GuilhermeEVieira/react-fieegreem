@@ -25,7 +25,7 @@ function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="nav-links-main">
+          <div className="collapse navbar-collapse " id="nav-links-main">
             <div className="navbar-nav">
               <Link to="/fruta" className="nav-item nav-link" id="frutas-menu">
                 Frutas
@@ -44,9 +44,10 @@ function Header() {
               </Link>
             </div>
           </div>
-          <div className="collapse navbar-collapse" id="nav-links-secondary">
+          <div className="collapse navbar-collapse form-control mr-sm-2" id="nav-links-secondary">
             <div className="navbar-nav">
-              <Link to="/" className="nav-item nav-link">
+            
+              <Link to="/" className="nav-item nav-link btn btn-outline-success my-2 my-sm-0">
                 <img src={Pesquisa} alt="Search" width="20" />
               </Link>
               <Link to="/login" className="nav-item nav-link">
