@@ -11,42 +11,35 @@ function Header() {
     <header>
       <div className="container" id="nav-container">
         <nav className="navbar navbar-expand-lg fixed-top">
+          
           <Link to="/" className="navbar-brand">
-          <img id="logo" src={Logo} alt="Logo" />
+            <img id="logo" src={Logo} alt="Logo" />
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#nav-links-main"
-            aria-controls="nav-links-main"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse " id="nav-links-main">
-            <div className="navbar-nav">
+          
+          <div className="collapse navbar-collapse" id="nav-links-main">
+            <div className="navbar-nav mr-auto">
+
               <Link to="/fruta" className="nav-item nav-link" id="frutas-menu">
                 Frutas
               </Link>
+
               <Link to="/verdura" className="nav-item nav-link" id="verdura-menu">
                 Verduras
               </Link>
+
               <Link to="/hortalica" className="nav-item nav-link" id="hortalica-menu">
                 Hortaliças
               </Link>
+
               <Link to="/legume" className="nav-item nav-link" id="legums-menu">
                 Legumes
               </Link>
+
               <Link to="/outro" className="nav-item nav-link" id="outros-menu">
                 Outros
               </Link>
             </div>
-          </div>
-          <div className="collapse navbar-collapse form-control mr-sm-2" id="nav-links-secondary">
-            <div className="navbar-nav">
-            
+            <div className="navbar-nav" id="nav-links-secondary">
               <Link to="/" className="nav-item nav-link btn btn-outline-success my-2 my-sm-0">
                 <img src={Pesquisa} alt="Search" width="20" />
               </Link>
@@ -54,7 +47,7 @@ function Header() {
                 <img src={Usuario} alt="User" width="20" />
               </Link>
               <Link to="/carrinho" className="nav-item nav-link">
-                    <img src={Carrinho}alt="Cart" width="20" />
+                <img src={Carrinho} alt="Cart" width="20" />
               </Link>
             </div>
           </div>
